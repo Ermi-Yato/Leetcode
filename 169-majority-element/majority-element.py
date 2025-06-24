@@ -1,5 +1,6 @@
+from collections import Counter
 class Solution:
     def majorityElement(self, nums: List[int]) -> int:
-        nums.sort()
-        n = len(nums)
-        return nums[n//2]
+        count = Counter(nums)
+        frequentItem = count.most_common()
+        return frequentItem[0][0]
