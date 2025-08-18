@@ -1,9 +1,11 @@
 class Solution:
     def plusOne(self, digits: List[int]) -> List[int]:
-        digit = ""
-        for num in digits:
-            digit += str(num)
-        digit = int(digit) + 1
-        digit = str(digit)
-        listDigit = [int(i) for i in digit]
-        return listDigit
+        number_str = ""
+        for digit in digits:
+            number_str += str(digit)
+
+        incremented_number = int(number_str) + 1
+        incremented_str = str(incremented_number)
+        incremented_digits = [int(i) for i in incremented_str]
+
+        return incremented_digits
