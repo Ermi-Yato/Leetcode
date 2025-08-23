@@ -2,7 +2,7 @@ class Solution:
     def getRow(self, rowIndex: int) -> List[int]:
         output = []
         for i in range(rowIndex+1):
-            singleRow = [0] * (i+1)
+            singleRow = [1] * (i+1)
             if i==0:
                 output.append([1])
             elif i==1:
@@ -15,4 +15,5 @@ class Solution:
                     else:
                         singleRow[j] = prevRow[j-1] + prevRow[j]
                 output.append(singleRow)
+
         return output[rowIndex]
