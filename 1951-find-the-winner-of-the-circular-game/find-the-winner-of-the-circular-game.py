@@ -1,13 +1,10 @@
 class Solution:
     def findTheWinner(self, n: int, k: int) -> int:
-        friends = deque()
-        for i in range(1, n+1):
-            friends.append(i)
-
+        friends = list(range(1, n+1))
+        i = 0
         while len(friends) > 1:
-            for i in range(k-1):
-                friends.append(friends.popleft())
-            friends.popleft()
+            i = (i + k - 1) % len(friends)
+            friends.pop(i)
 
         return friends[0]
             
