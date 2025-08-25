@@ -1,7 +1,7 @@
 class Solution:
     def isValid(self, s: str) -> bool:
         stack = deque()
-        validPairs = ["()", "[]", "{}"]
+        validPairs = {"()", "[]", "{}"}
         for char in s:
             if char in "({[":
                 stack.append(char)
