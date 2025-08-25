@@ -1,11 +1,12 @@
 class Solution:
     def isValid(self, s: str) -> bool:
-        stack = []
-        valid_pairs = {'()', '[]', '{}'}
+        stack = deque()
+        validPairs = ["()", "[]", "{}"]
         for char in s:
-            if char in '({[':
+            if char in "({[":
                 stack.append(char)
-            elif not stack or stack.pop() + char not in valid_pairs:
-                return False
-      
-        return not stack
+            else:
+                if len(stack)==0 or (stack.pop() + char) not in validPairs: 
+                    return False
+
+        return len(stack) == 0
