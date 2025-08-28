@@ -1,5 +1,6 @@
 class Solution:
     def countPairs(self, nums: List[int], k: int) -> int:
+        # Instead of checking every pair, we store indexes with the same value into a group and we only check inside that group.
         count = 0
         indicesGroup = defaultdict(list)
         for i, num in enumerate(nums):
