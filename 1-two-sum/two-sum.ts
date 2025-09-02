@@ -1,10 +1,16 @@
 function twoSum(nums: number[], target: number): number[] {
-    for (let i=0; i<nums.length; i++) {
-        for (let j=i+1; j<nums.length; j++) {
-            if (nums[i] + nums[j] === target) {
-                return [i,j]
-            }
+    const numIndexMap = new Map<number, number>()
+
+    for (let i = 0; i < nums.length; i++) {
+        const x = nums[i]
+        const difference = target - x
+
+        if (numIndexMap.has(difference)) {
+        return [numIndexMap.get(difference)!, i]
         }
+
+        numIndexMap.set(x, i)
     }
     return []
+
 };
