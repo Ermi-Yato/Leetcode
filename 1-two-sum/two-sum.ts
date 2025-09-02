@@ -11,6 +11,5 @@ function twoSum(nums: number[], target: number): number[] {
 
         numIndexMap.set(x, i)
     }
-    return []
 
 };
