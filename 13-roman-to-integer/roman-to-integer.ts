@@ -8,6 +8,7 @@ function romanToInt(s: string): number {
     "D": 500,
     "M": 1000
   }
+    // No need to handle the last character
     let integerValue = 0
     let previousCharValue = 0
 
@@ -22,8 +23,8 @@ function romanToInt(s: string): number {
     }
 
     return integerValue
+    
     // let value = 0
-
     // for (let i = 0; i + 1 < s.length; i++) {
     //     const letter = s[i]
     //     if (romanInteger[letter] < romanInteger[s[i + 1]]) {
