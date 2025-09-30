@@ -1,5 +1,6 @@
 class Solution:
     def isPalindrome(self, s: str) -> bool:
+        # we iterate from both side inward
         left_index = 0
         right_index = len(s) - 1
       
